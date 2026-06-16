@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+  校融媒体中心门户网站 — 登录页 (login.html)
+  技术栈：HTML5 + CSS3
+  表单规范：label 关联（for/id）、文本框（text）、密码框（password）
+  语义化标签：header, nav, main, section, footer, form
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校融媒体中心成员登录 — 内部管理系统入口">
+  <title>成员登录 — 校融媒体中心</title>
+  <!-- 外部 CSS 样式表 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 顶部导航栏 ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">📡</div>
+        <div class="logo-text">融媒体<span>中心</span></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="news.html">新闻动态</a>
+        <a href="schedule.html">课表日程</a>
+        <a href="login.html" class="active">登录</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== 登录区域 ========== -->
+  <main>
+    <section class="login-section">
+      <div class="login-card">
+
+        <!-- 登录标题 -->
+        <h2>🔐 成员登录</h2>
+        <p class="login-subtitle">校融媒体中心内部管理系统</p>
+
+        <!--
+          登录表单
+          - 使用 label 的 for 属性与 input 的 id 属性建立关联
+          - 包含文本框（text）和密码框（password）
+        -->
+        <form action="#" method="post">
+
+          <!-- 用户名输入组 —— label 关联 -->
+          <div class="form-group">
+            <!-- for="username" 关联下方的 id="username" 文本框 -->
+            <label for="username">👤 用户名</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-input"
+              placeholder="请输入工号或用户名"
+              required
+            >
+          </div>
+
+          <!-- 密码输入组 —— label 关联 -->
+          <div class="form-group">
+            <!-- for="password" 关联下方的 id="password" 密码框 -->
+            <label for="password">🔒 密码</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-input"
+              placeholder="请输入密码"
+              required
+            >
+          </div>
+
+          <!-- 登录按钮 -->
+          <button type="submit" class="btn-login">✨ 登 录</button>
+
+        </form>
+
+        <!-- 辅助信息 -->
+        <p class="text-center mt-20" style="font-size:13px; color:var(--text-light);">
+          忘记密码？请联系管理员重置<br>
+          新成员请先完成招新报名后获取账号
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🏫 校融媒体中心</h4>
+        <p>融合校园媒体力量<br>传播青春正能量</p>
+      </div>
+      <div class="footer-col">
+        <h4>📞 联系我们</h4>
+        <p>地址：学校行政楼 302 室<br>邮箱：media@campus.edu.cn<br>电话：(010) 1234-5678</p>
+      </div>
+      <div class="footer-col">
+        <h4>🔗 快速链接</h4>
+        <ul>
+          <li><a href="index.html" style="color:rgba(255,255,255,0.7);">网站首页</a></li>
+          <li><a href="news.html" style="color:rgba(255,255,255,0.7);">新闻动态</a></li>
+          <li><a href="schedule.html" style="color:rgba(255,255,255,0.7);">课表日程</a></li>
+          <li><a href="login.html" style="color:rgba(255,255,255,0.7);">成员登录</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 校融媒体中心 | 技术支持：融媒体技术部 | 仅供学习交流使用</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,686 @@
+/* ============================================================
+   校融媒体中心门户网站 — 主样式表
+   项目：校融媒体中心门户网站
+   技术：HTML5 + CSS3（外部样式表）
+   布局方案：Flex 布局 + 浮动辅助
+   作者：融媒体中心技术部
+   ============================================================ */
+
+/* ---------- CSS 变量（主题色定义） ---------- */
+:root {
+  --primary-dark: #1a3a5c;      /* 主色-深蓝 */
+  --primary: #2c6fac;           /* 主色-标准蓝 */
+  --primary-light: #4a90d9;     /* 主色-浅蓝 */
+  --accent: #e8a838;            /* 点缀-金色 */
+  --accent-light: #f5d78c;      /* 点缀-浅金 */
+  --bg-primary: #f5f6fa;        /* 背景-主 */
+  --bg-white: #ffffff;          /* 背景-白 */
+  --bg-card: #ffffff;           /* 卡片背景 */
+  --text-dark: #2c3e50;         /* 文字-深 */
+  --text-secondary: #5a6c7d;    /* 文字-次要 */
+  --text-light: #8c9bab;        /* 文字-浅 */
+  --border: #e1e8ef;            /* 边框 */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);      /* 阴影-标准 */
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15); /* 阴影-悬停 */
+  --radius: 12px;               /* 圆角 */
+  --max-width: 1200px;          /* 内容最大宽度 */
+}
+
+/* ---------- 全局重置 & 基础样式 ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.3s ease;  /* CSS3 过渡效果 */
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- ===== 页面顶部导航栏（使用语义化 header 标签） ===== ---------- */
+.site-header {
+  background: var(--bg-white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* CSS3 过渡：阴影渐变动画 */
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;               /* Flex 布局 */
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+/* Logo 区域 */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  /* CSS3 动画：Logo 图标呼吸效果 */
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+/* Logo 呼吸动画关键帧 */
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 111, 172, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(44, 111, 172, 0); }
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 2px;
+}
+
+.logo-text span {
+  color: var(--accent);
+}
+
+/* 导航菜单（语义化 nav 标签） */
+.main-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.main-nav a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-dark);
+  border-radius: 8px;
+  /* CSS3 过渡 */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 2px;
+  left: 50%;
+  background: var(--accent);
+  border-radius: 2px;
+  /* CSS3 过渡：下划线滑入效果 */
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 70%;
+  left: 15%;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+  background-color: rgba(44, 111, 172, 0.06);
+  transform: translateY(-2px);  /* CSS3 变形 */
+}
+
+/* ---------- ===== 通栏 Banner 区域 ===== ---------- */
+.hero-banner {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 40%, var(--primary-light) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Banner 背景动态装饰 */
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+  /* CSS3 动画：背景光晕缓慢旋转 */
+  animation: bannerGlow 15s linear infinite;
+}
+
+@keyframes bannerGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-banner h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  position: relative;
+  letter-spacing: 4px;
+  /* CSS3 动画：标题淡入上浮 */
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-banner p {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  /* CSS3 动画：副标题延时淡入 */
+  animation: fadeInUp 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- ===== 主体内容区（语义化 main 标签） ===== ---------- */
+.site-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* 章节标题 */
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ---------- ===== 多栏卡片布局（Flex 布局实现） ===== ---------- */
+.card-grid {
+  display: flex;                /* Flex 多栏布局 */
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 三栏卡片（每栏等宽） */
+.card-grid-3 .card-item {
+  flex: 1 1 300px;              /* 弹性伸缩，最小 300px */
+  max-width: 360px;
+}
+
+/* 卡片样式 */
+.card-item {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  /* CSS3 过渡：悬停效果 */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid var(--border);
+}
+
+/* CSS3 伪类 :hover —— 卡片悬停上浮 + 阴影加强 */
+.card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: inline-block;
+  /* CSS3 动画：图标悬浮 */
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+/* 每个卡片图标延时不同，产生错落感 */
+.card-item:nth-child(2) .card-icon {
+  animation-delay: 0.5s;
+}
+.card-item:nth-child(3) .card-icon {
+  animation-delay: 1s;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.card-item h3 {
+  font-size: 20px;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.card-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ---------- ===== 新闻列表区域 ===== ---------- */
+.news-section {
+  margin-top: 50px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  /* CSS3 过渡 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+/* 新闻项悬停效果 */
+.news-item:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-hover);
+  border-left-color: var(--accent);
+}
+
+.news-date {
+  min-width: 70px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.news-date .day {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.news-date .month {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.news-content h4 {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.news-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 新闻分类标签 */
+.news-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.tag-notice  { background: #e3f2fd; color: #1565c0; }
+.tag-event   { background: #fce4ec; color: #c62828; }
+.tag-media   { background: #e8f5e9; color: #2e7d32; }
+.tag-tech    { background: #fff3e0; color: #e65100; }
+
+/* ---------- ===== 表格样式（schedule.html 课表页） ===== ---------- */
+.schedule-wrapper {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow-x: auto;             /* 小屏幕横向滚动 */
+  padding: 8px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  min-width: 800px;
+}
+
+/* 表头样式 */
+.schedule-table thead th {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  padding: 16px 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 第一列（时间列） */
+.schedule-table thead th:first-child {
+  background: var(--primary-dark);
+}
+
+/* 表体样式 */
+.schedule-table tbody td {
+  padding: 14px 10px;
+  text-align: center;
+  border: 1px solid var(--border);
+  /* CSS3 过渡：行悬停背景变化 */
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* 时间列 */
+.schedule-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--primary);
+  background-color: rgba(44, 111, 172, 0.03);
+}
+
+/* CSS3 伪类 :hover —— 表格行高亮 */
+.schedule-table tbody tr:hover td {
+  background-color: rgba(232, 168, 56, 0.08);
+  transform: scale(1.01);
+}
+
+/* 课程单元格样式 */
+.cell-course {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.cell-empty {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* 不同课程的背景色标识 */
+.cell-type-a { background-color: rgba(44, 111, 172, 0.08); }
+.cell-type-b { background-color: rgba(232, 168, 56, 0.08); }
+.cell-type-c { background-color: rgba(76, 175, 80, 0.08); }
+.cell-type-d { background-color: rgba(156, 39, 176, 0.06); }
+
+.schedule-table tfoot td {
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  color: var(--text-light);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* ---------- ===== 登录表单样式（login.html） ===== ---------- */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px - 200px);  /* 减去头部和底部高度 */
+  padding: 40px 20px;
+}
+
+.login-card {
+  background: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-hover);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  /* CSS3 动画：登录卡片淡入 */
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.login-card h2 {
+  font-size: 28px;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.login-card .login-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 36px;
+}
+
+/* 表单组 */
+.form-group {
+  margin-bottom: 22px;
+}
+
+/* label 标签关联 */
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+/* 输入框统一样式 */
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-dark);
+  outline: none;
+  /* CSS3 过渡：聚焦时边框颜色平滑切换 */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* CSS3 伪类 :focus —— 输入框聚焦效果 */
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(44, 111, 172, 0.1);
+  background: var(--bg-white);
+}
+
+/* 文本输入框 */
+input[type="text"].form-input,
+input[type="password"].form-input {
+  /* 继承 .form-input 样式 */
+}
+
+/* CSS3 伪类 ::placeholder */
+.form-input::placeholder {
+  color: var(--text-light);
+}
+
+/* 登录按钮 */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  /* CSS3 过渡 */
+  transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* 登录按钮悬停效果 */
+.btn-login:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 111, 172, 0.35);
+}
+
+/* 登录按钮点击效果 */
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* ---------- ===== 页脚（语义化 footer 标签） ===== ---------- */
+.site-footer {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  color: var(--accent-light);
+}
+
+.footer-col p,
+.footer-col li {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 2;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- ===== 通用辅助类 ===== ---------- */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+.mb-20 { margin-bottom: 20px; }
+
+/* ---------- ===== 响应式适配（大作业加分项） ===== ---------- */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 20px;
+    gap: 12px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .main-nav a {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .hero-banner {
+    padding: 50px 16px;
+  }
+
+  .hero-banner h1 {
+    font-size: 28px;
+  }
+
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-item {
+    max-width: 100% !important;
+  }
+
+  .news-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+  }
+}

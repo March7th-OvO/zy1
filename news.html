@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+  校融媒体中心门户网站 — 新闻动态页 (news.html)
+  技术栈：HTML5 + CSS3
+  语义化标签：header, nav, main, section, article, footer
+  特色：新闻列表布局 + 分类筛选标签 + 日期展示
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校融媒体中心新闻动态 — 最新校园资讯、活动报道、融媒发布">
+  <title>新闻动态 — 校融媒体中心</title>
+  <!-- 外部 CSS 样式表 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 顶部导航栏 ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">📡</div>
+        <div class="logo-text">融媒体<span>中心</span></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="news.html" class="active">新闻动态</a>
+        <a href="schedule.html">课表日程</a>
+        <a href="login.html">登录</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== 通栏 Banner ========== -->
+  <section class="hero-banner">
+    <h1>📰 新闻动态</h1>
+    <p>第一时间掌握校园资讯，了解融媒体中心最新成果</p>
+  </section>
+
+  <!-- ========== 主体内容区 ========== -->
+  <main class="site-main">
+
+    <!-- 置顶/头条新闻 -->
+    <section>
+      <h2 class="section-title">🔥 头条新闻</h2>
+      <p class="section-subtitle">本周重点推荐</p>
+
+      <div class="news-list">
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">15</div>
+            <div class="month">2026-06</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-event">头条</span>
+            <h4>校融媒体中心荣获"全国高校优秀校园媒体"称号</h4>
+            <p>在近日揭晓的2026年度全国高校校园媒体评选中，我校融媒体中心凭借出色的内容创作能力与创新的传播模式，从全国300余所高校中脱颖而出，荣获"全国高校优秀校园媒体"称号。这是中心成立以来获得的最高级别荣誉。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 全部新闻列表 -->
+    <section class="news-section">
+      <h2 class="section-title">📋 全部新闻</h2>
+      <p class="section-subtitle">按发布时间排列</p>
+
+      <div class="news-list">
+        <!-- 新闻1 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">12</div>
+            <div class="month">2026-06</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-event">活动</span>
+            <h4>融媒体中心圆满完成2026届毕业典礼直播任务</h4>
+            <p>多机位高清直播、实时字幕推送、航拍全景展示——融媒体中心以专业水准为全体毕业生留下了珍贵回忆。</p>
+          </div>
+        </article>
+
+        <!-- 新闻2 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">08</div>
+            <div class="month">2026-06</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-tech">技术</span>
+            <h4>融媒体中心完成设备升级：4K超高清摄像机正式投入使用</h4>
+            <p>中心新购置的4K超高清摄录设备已完成调试，将应用于后续大型活动的录制与直播，画质全面升级。</p>
+          </div>
+        </article>
+
+        <!-- 新闻3 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">05</div>
+            <div class="month">2026-06</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-notice">公告</span>
+            <h4>2026年度融媒体中心新成员招新工作正式启动</h4>
+            <p>面向全校招募新闻采编、摄影摄像、后期制作、新媒体运营等方向的新成员，报名截止至6月20日。</p>
+          </div>
+        </article>
+
+        <!-- 新闻4 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">01</div>
+            <div class="month">2026-06</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-media">融媒</span>
+            <h4>六月融媒体矩阵数据报告发布：全平台阅读量突破百万</h4>
+            <p>融媒体中心发布6月运营数据，官网、公众号、短视频三大平台合计阅读量达120万次，创历史新高。</p>
+          </div>
+        </article>
+
+        <!-- 新闻5 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">28</div>
+            <div class="month">2026-05</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-media">融媒</span>
+            <h4>我校官方短视频账号粉丝突破10万，获省级表彰</h4>
+            <p>融媒体中心运营的官方短视频平台粉丝总量突破10万，被省教育厅授予"高校新媒体运营优秀单位"。</p>
+          </div>
+        </article>
+
+        <!-- 新闻6 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">20</div>
+            <div class="month">2026-05</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-event">活动</span>
+            <h4>"校园好声音"歌手大赛全程录制圆满完成</h4>
+            <p>融媒体中心为第15届"校园好声音"提供全程录播与精彩片段剪辑，节目将于近期在校内大屏轮播。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🏫 校融媒体中心</h4>
+        <p>融合校园媒体力量<br>传播青春正能量</p>
+      </div>
+      <div class="footer-col">
+        <h4>📞 联系我们</h4>
+        <p>地址：学校行政楼 302 室<br>邮箱：media@campus.edu.cn<br>电话：(010) 1234-5678</p>
+      </div>
+      <div class="footer-col">
+        <h4>🔗 快速链接</h4>
+        <ul>
+          <li><a href="index.html" style="color:rgba(255,255,255,0.7);">网站首页</a></li>
+          <li><a href="news.html" style="color:rgba(255,255,255,0.7);">新闻动态</a></li>
+          <li><a href="schedule.html" style="color:rgba(255,255,255,0.7);">课表日程</a></li>
+          <li><a href="login.html" style="color:rgba(255,255,255,0.7);">成员登录</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 校融媒体中心 | 技术支持：融媒体技术部 | 仅供学习交流使用</p>
+    </div>
+  </footer>
+
+</body>
+</html>

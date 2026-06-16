@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+  校融媒体中心门户网站 — 首页 (index.html)
+  技术栈：HTML5 + CSS3
+  语义化标签：header, nav, main, section, footer
+  布局方案：Flex 多栏卡片布局 + 通栏 Banner
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校融媒体中心门户网站 — 融合校园媒体力量，传播青春正能量">
+  <title>校融媒体中心 — 首页</title>
+  <!-- 外部 CSS 样式表（实现代码分离） -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 顶部导航栏（语义化 header） ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-icon">📡</div>
+        <div class="logo-text">融媒体<span>中心</span></div>
+      </div>
+
+      <!-- 导航菜单（语义化 nav） -->
+      <nav class="main-nav">
+        <a href="index.html" class="active">首页</a>
+        <a href="news.html">新闻动态</a>
+        <a href="schedule.html">课表日程</a>
+        <a href="login.html">登录</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== 通栏 Banner ========== -->
+  <section class="hero-banner">
+    <h1>🎬 校融媒体中心</h1>
+    <p>融合校园媒体力量 · 传播青春正能量 · 讲好校园故事</p>
+  </section>
+
+  <!-- ========== 主体内容区（语义化 main） ========== -->
+  <main class="site-main">
+
+    <!-- 三栏功能卡片（Flex 布局） -->
+    <section>
+      <h2 class="section-title">🏛️ 中心职能</h2>
+      <p class="section-subtitle">三大核心板块，打造校园全媒体矩阵</p>
+
+      <div class="card-grid card-grid-3">
+        <!-- 卡片1：新闻采编 -->
+        <div class="card-item">
+          <div class="card-icon">📰</div>
+          <h3>新闻采编部</h3>
+          <p>负责校园新闻的采集、撰写与编辑工作，第一时间报道校园重大活动、学术成果及师生风采，传递最真实、最及时的校园资讯。</p>
+        </div>
+
+        <!-- 卡片2：媒体制作 -->
+        <div class="card-item">
+          <div class="card-icon">🎥</div>
+          <h3>媒体制作部</h3>
+          <p>涵盖摄影、摄像、后期剪辑、平面设计等方向，为校园宣传提供高质量视觉内容，用镜头记录每一个精彩瞬间。</p>
+        </div>
+
+        <!-- 卡片3：融媒发布 -->
+        <div class="card-item">
+          <div class="card-icon">🌐</div>
+          <h3>融媒发布部</h3>
+          <p>统筹官网、微信公众号、短视频平台等多渠道内容分发，实现"一次采集、多元生成、全媒传播"的融合媒体矩阵。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新动态 -->
+    <section class="news-section">
+      <h2 class="section-title">📢 最新动态</h2>
+      <p class="section-subtitle">关注校园新鲜事</p>
+
+      <div class="news-list">
+        <!-- 新闻条目1 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">12</div>
+            <div class="month">2026-06</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-event">活动</span>
+            <h4>融媒体中心圆满完成2026届毕业典礼直播任务</h4>
+            <p>6月12日，校融媒体中心顺利完成2026届毕业典礼全程多机位直播，累计观看量突破5万人次，获得师生一致好评。</p>
+          </div>
+        </article>
+
+        <!-- 新闻条目2 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">05</div>
+            <div class="month">2026-06</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-notice">公告</span>
+            <h4>2026年度融媒体中心新成员招新工作正式启动</h4>
+            <p>融媒体中心面向全校招募新成员，设新闻采编、摄影摄像、后期制作、新媒体运营等岗位，欢迎热爱媒体的同学踊跃报名。</p>
+          </div>
+        </article>
+
+        <!-- 新闻条目3 -->
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">28</div>
+            <div class="month">2026-05</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-media">融媒</span>
+            <h4>我校官方短视频账号粉丝突破10万，获省级表彰</h4>
+            <p>由融媒体中心运营的学校官方短视频平台账号粉丝总量突破10万，荣获"省高校新媒体运营优秀单位"荣誉称号。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚（语义化 footer） ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🏫 校融媒体中心</h4>
+        <p>融合校园媒体力量<br>传播青春正能量</p>
+      </div>
+      <div class="footer-col">
+        <h4>📞 联系我们</h4>
+        <p>地址：学校行政楼 302 室<br>邮箱：media@campus.edu.cn<br>电话：(010) 1234-5678</p>
+      </div>
+      <div class="footer-col">
+        <h4>🔗 快速链接</h4>
+        <ul>
+          <li><a href="index.html" style="color:rgba(255,255,255,0.7);">网站首页</a></li>
+          <li><a href="news.html" style="color:rgba(255,255,255,0.7);">新闻动态</a></li>
+          <li><a href="schedule.html" style="color:rgba(255,255,255,0.7);">课表日程</a></li>
+          <li><a href="login.html" style="color:rgba(255,255,255,0.7);">成员登录</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 校融媒体中心 | 技术支持：融媒体技术部 | 仅供学习交流使用</p>
+    </div>
+  </footer>
+
+</body>
+</html>

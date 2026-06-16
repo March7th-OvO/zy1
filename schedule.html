@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--
+  校融媒体中心门户网站 — 课表日程页 (schedule.html)
+  技术栈：HTML5 + CSS3
+  表格规范：thead, tbody, tfoot, th, td, colspan, rowspan
+  语义化标签：header, nav, main, section, footer
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="融媒体中心值班课表与日程安排">
+  <title>课表日程 — 校融媒体中心</title>
+  <!-- 外部 CSS 样式表 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 顶部导航栏 ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">📡</div>
+        <div class="logo-text">融媒体<span>中心</span></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="news.html">新闻动态</a>
+        <a href="schedule.html" class="active">课表日程</a>
+        <a href="login.html">登录</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== 通栏 Banner ========== -->
+  <section class="hero-banner">
+    <h1>📅 值班课表 & 日程安排</h1>
+    <p>融媒体中心各部门值班安排 · 高效协同 · 有序运转</p>
+  </section>
+
+  <!-- ========== 主体内容区 ========== -->
+  <main class="site-main">
+
+    <!-- 课表表格区域 -->
+    <section>
+      <h2 class="section-title">🗓️ 融媒体中心值班课表</h2>
+      <p class="section-subtitle">2025-2026学年第二学期 · 第17周（6月16日 — 6月20日）</p>
+
+      <!-- 表格外容器（支持横向滚动） -->
+      <div class="schedule-wrapper">
+
+        <!--
+          表格使用完整语义结构：thead / tbody / tfoot
+          使用 colspan 合并表头，rowspan 合并时间段
+        -->
+        <table class="schedule-table">
+
+          <!-- ===== 表头（thead） ===== -->
+          <thead>
+            <tr>
+              <!-- 第一列表头：时间 -->
+              <th>时间段</th>
+              <th>周一<br>6/16</th>
+              <th>周二<br>6/17</th>
+              <th>周三<br>6/18</th>
+              <th>周四<br>6/19</th>
+              <th>周五<br>6/20</th>
+            </tr>
+          </thead>
+
+          <!-- ===== 表体（tbody） ===== -->
+          <tbody>
+            <!-- 上午第一节 8:00-9:40 -->
+            <tr>
+              <!-- rowspan: 跨两行合并（上午两个时段同时间段） -->
+              <td rowspan="2">上午<br><small>8:00-12:00</small></td>
+              <td class="cell-course cell-type-a">新闻采编部<br>值班：张明</td>
+              <td class="cell-course cell-type-b">媒体制作部<br>值班：李华</td>
+              <td class="cell-course cell-type-c">融媒发布部<br>值班：王芳</td>
+              <td class="cell-course cell-type-a">新闻采编部<br>值班：赵丽</td>
+              <td class="cell-course cell-type-b">媒体制作部<br>值班：陈强</td>
+            </tr>
+            <!-- 上午第二节 10:00-12:00 -->
+            <tr>
+              <td class="cell-course cell-type-b">媒体制作部<br>值班：刘洋</td>
+              <td class="cell-course cell-type-c">融媒发布部<br>值班：周婷</td>
+              <td class="cell-course cell-type-a">新闻采编部<br>值班：张明</td>
+              <td class="cell-course cell-type-b">媒体制作部<br>值班：李华</td>
+              <td class="cell-course cell-type-c">融媒发布部<br>值班：王芳</td>
+            </tr>
+
+            <!-- 午休 12:00-14:00 —— 使用 colspan 合并整行 -->
+            <tr>
+              <!-- colspan: 跨6列合并为一行 -->
+              <td colspan="6" style="background:#f0f4f8; color:#8c9bab; font-weight:600; letter-spacing:2px;">
+                🕐 午休时间 12:00 — 14:00
+              </td>
+            </tr>
+
+            <!-- 下午第一节 14:00-15:40 -->
+            <tr>
+              <td rowspan="2">下午<br><small>14:00-18:00</small></td>
+              <td class="cell-course cell-type-c">融媒发布部<br>值班：周婷</td>
+              <td class="cell-course cell-type-a">新闻采编部<br>值班：赵丽</td>
+              <td class="cell-course cell-type-b">媒体制作部<br>值班：陈强</td>
+              <td class="cell-course cell-type-c">融媒发布部<br>值班：刘洋</td>
+              <td class="cell-course cell-type-d">团建活动<br>全员参与</td>
+            </tr>
+            <!-- 下午第二节 16:00-18:00 -->
+            <tr>
+              <td class="cell-course cell-type-b">媒体制作部<br>值班：陈强</td>
+              <td class="cell-course cell-type-c">融媒发布部<br>值班：王芳</td>
+              <td class="cell-course cell-type-a">新闻采编部<br>值班：赵丽</td>
+              <td class="cell-course cell-type-d">设备维护<br>全体技术组</td>
+              <td class="cell-course cell-type-d">团建活动<br>全员参与</td>
+            </tr>
+          </tbody>
+
+          <!-- ===== 表脚（tfoot） ===== -->
+          <tfoot>
+            <tr>
+              <!-- colspan: 表脚跨全部列 -->
+              <td colspan="6">
+                📌 备注：值班期间请保持手机畅通，紧急事务请联系部长协调。如有调班需求，请提前24小时报备。
+              </td>
+            </tr>
+          </tfoot>
+
+        </table>
+
+      </div>
+    </section>
+
+    <!-- 近期重要日程 -->
+    <section class="mt-40">
+      <h2 class="section-title">📌 近期重要日程</h2>
+      <p class="section-subtitle">标记你的日历，不错过每一个重要时刻</p>
+
+      <div class="news-list">
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">18</div>
+            <div class="month">周三</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-tech">培训</span>
+            <h4>摄影技巧专题培训 —— "光影与构图"</h4>
+            <p>时间：14:30-16:00 | 地点：融媒体中心会议室 | 主讲：李华（媒体制作部部长）</p>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">20</div>
+            <div class="month">周五</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-event">团建</span>
+            <h4>融媒体中心期末团建活动</h4>
+            <p>时间：16:00-18:00 | 地点：校体育馆 | 全体成员参加，总结本学期工作，展望下学期规划。</p>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="news-date">
+            <div class="day">25</div>
+            <div class="month">周三</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-notice">截止</span>
+            <h4>2026年秋季招新报名截止</h4>
+            <p>请各部门在截止日前完成报名表审核与初筛，面试安排将于6月28日公布。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🏫 校融媒体中心</h4>
+        <p>融合校园媒体力量<br>传播青春正能量</p>
+      </div>
+      <div class="footer-col">
+        <h4>📞 联系我们</h4>
+        <p>地址：学校行政楼 302 室<br>邮箱：media@campus.edu.cn<br>电话：(010) 1234-5678</p>
+      </div>
+      <div class="footer-col">
+        <h4>🔗 快速链接</h4>
+        <ul>
+          <li><a href="index.html" style="color:rgba(255,255,255,0.7);">网站首页</a></li>
+          <li><a href="news.html" style="color:rgba(255,255,255,0.7);">新闻动态</a></li>
+          <li><a href="schedule.html" style="color:rgba(255,255,255,0.7);">课表日程</a></li>
+          <li><a href="login.html" style="color:rgba(255,255,255,0.7);">成员登录</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 校融媒体中心 | 技术支持：融媒体技术部 | 仅供学习交流使用</p>
+    </div>
+  </footer>
+
+</body>
+</html>
